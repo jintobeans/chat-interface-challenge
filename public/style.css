@@ -1,0 +1,14 @@
+* {
+  font-family: 'helvetica', 'sans-serif';
+  font-weight: lighter; }
+
+#home {
+  margin: 0 10px; }
+
+.chat-window {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 10px;
+  width: 50%; }
+
+/*# sourceMappingURL=style.css.map */

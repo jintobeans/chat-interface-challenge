@@ -7,6 +7,7 @@
   border-radius: 4em;
   padding: 0.5em;
   margin: 0.5em;
+  width: fit-content
 }
 
 #home{
@@ -17,39 +18,57 @@
   display: inline-block;
   box-sizing: border-box;
   padding: 0 10px;
-  width: 50%
+  width: 50%;
+  height: 86vh
 }
 
 .message-bubble-recipient{
   @extend %messagebubble;
   background-color: lightgray;
   text-align: left;
+  align-self: flex-start;
 }
 
 .message-bubble-sender{
   @extend %messagebubble;
   background-color: lightseagreen;
   text-align: right;
+  align-self: flex-end;
+}
+
+.window-container {
+  height: 74vh;
 }
 
 .messages-container{
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  height: inherit;
+  overflow-y: scroll;
+  justify-content: flex-end;
 }
 
 .input-container{
-  @extend %messagebubble;
+  border-radius: 4em;
+  margin: 0.5em;
+  padding: 0;
   form {
     display: flex;
     justify-content: space-around;
   }
-  input{
-    padding: 0;
-    flex-grow: 6
+  .input-text {
+    padding: 1;
+    flex-grow: 25;
+    border-radius: 4em;
+    height: 2em;
+    &:focus{
+      outline: none
+    }
   }
   .send-button{
     color: lightseagreen;
-    flex-grow: 1
+    flex-grow: 1;
+    align-self: center
   }
 }
 

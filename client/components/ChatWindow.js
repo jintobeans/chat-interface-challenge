@@ -9,19 +9,21 @@ export class ChatWindow extends Component {
   }
 
   render(){
-    let { messages, user } = this.props
+    let { messages, user, name } = this.props
 
     return (
-      <div className="chat-window" id={`${this.props.name}-window`}>
+      <div className="chat-window" id={`${name}-window`}>
         <h3>Chatting with {user}</h3>
-        <div className="messages-container">
-          {messages && messages.map((message) => {
-            return (
-              <MessageBubble message={message} user={user}/>
-            )
-          })}
+        <div className="window-container">
+          <div className="messages-container">
+            {messages && messages.map((message) => {
+              return (
+                <MessageBubble message={message} user={user}/>
+              )
+            })}
+          </div>
+          <Input />
         </div>
-        <Input />
       </div>
     )
   }

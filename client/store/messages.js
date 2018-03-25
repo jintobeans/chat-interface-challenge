@@ -27,6 +27,46 @@ const defaultMessages = [
     id: 4,
     user: 1,
     text: 'mine was pretty good'
+  },
+  {
+    id: 5,
+    user: 1,
+    text: 'it was awesome'
+  },
+  {
+    id: 6,
+    user: 1,
+    text: 'i tried a new brunch place'
+  },
+  {
+    id: 7,
+    user: 1,
+    text: 'and went to a concert'
+  },
+  {
+    id: 8,
+    user: 2,
+    text: 'what place did you try?'
+  },
+  {
+    id: 9,
+    user: 1,
+    text: 'mcDonalds have you had it'
+  },
+  {
+    id: 10,
+    user: 2,
+    text: 'what, you went to mcDs for brunch...?'
+  },
+  {
+    id: 11,
+    user: 1,
+    text: 'Oh. no, its actualy an irish pub called mcdonalds'
+  },
+  {
+    id: 12,
+    user: 1,
+    text: 'I see your confusion'
   }
 ]
 

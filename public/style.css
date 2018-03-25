@@ -16,7 +16,7 @@
   box-sizing: border-box;
   padding: 0 10px;
   width: 50%;
-  height: 86vh; }
+  height: 73vh; }
 
 .message-bubble-recipient {
   background-color: lightgray;
@@ -24,12 +24,12 @@
   align-self: flex-start; }
 
 .message-bubble-sender {
-  background-color: lightseagreen;
+  background-color: #43cff9;
   text-align: right;
   align-self: flex-end; }
 
 .window-container {
-  height: 74vh; }
+  height: inherit; }
 
 .messages-container {
   display: flex;
@@ -53,7 +53,7 @@
     .input-container .input-text:focus {
       outline: none; }
   .input-container .send-button {
-    color: lightseagreen;
+    color: #43cff9;
     flex-grow: 1;
     align-self: center; }
 

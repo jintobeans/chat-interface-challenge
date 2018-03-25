@@ -13,6 +13,11 @@ export default class Input extends Component {
     //will update redux to indicate typing??
   }
 
+  handleKey = (event) => {
+    event.preventDefault()
+    console.log('keydown', event.target.value)
+  }
+
   render(){
     return (
       <div className="input-container">
@@ -21,7 +26,8 @@ export default class Input extends Component {
             className="input-text"
             type="text"
             name="message"
-            onChange={this.handleTyping}/>
+            onChange={this.handleTyping}
+          />
           <input
             className="send-button"
             type="submit"

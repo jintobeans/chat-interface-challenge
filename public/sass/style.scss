@@ -3,6 +3,8 @@
   font-weight: lighter;
 }
 
+$accent-color:#43cff9;
+
 %messagebubble{
   border-radius: 4em;
   padding: 0.5em;
@@ -19,7 +21,7 @@
   box-sizing: border-box;
   padding: 0 10px;
   width: 50%;
-  height: 86vh
+  height: 73vh
 }
 
 .message-bubble-recipient{
@@ -31,13 +33,13 @@
 
 .message-bubble-sender{
   @extend %messagebubble;
-  background-color: lightseagreen;
+  background-color: $accent-color;
   text-align: right;
   align-self: flex-end;
 }
 
 .window-container {
-  height: 74vh;
+  height: inherit
 }
 
 .messages-container{
@@ -66,7 +68,7 @@
     }
   }
   .send-button{
-    color: lightseagreen;
+    color: $accent-color;
     flex-grow: 1;
     align-self: center
   }

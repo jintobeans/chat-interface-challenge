@@ -7,7 +7,9 @@ export default class MessageBubble extends Component {
   render(){
     let { message, user } = this.props
     return (
-      <div className="message-bubble" id={`message-${message.id}`}>
+      <div
+        className={message.user === user ? "message-bubble-sender" : "message-bubble-recipient"}
+        id={`message-${message.id}`}>
         {message.text}
       </div>
     )

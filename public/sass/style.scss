@@ -3,6 +3,12 @@
   font-weight: lighter;
 }
 
+%messagebubble{
+  border-radius: 4em;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
 #home{
   margin: 0 10px;
 }
@@ -13,3 +19,37 @@
   padding: 0 10px;
   width: 50%
 }
+
+.message-bubble-recipient{
+  @extend %messagebubble;
+  background-color: lightgray;
+  text-align: left;
+}
+
+.message-bubble-sender{
+  @extend %messagebubble;
+  background-color: lightseagreen;
+  text-align: right;
+}
+
+.messages-container{
+  display: flex;
+  flex-direction: column
+}
+
+.input-container{
+  @extend %messagebubble;
+  form {
+    display: flex;
+    justify-content: space-around;
+  }
+  input{
+    padding: 0;
+    flex-grow: 6
+  }
+  .send-button{
+    color: lightseagreen;
+    flex-grow: 1
+  }
+}
+

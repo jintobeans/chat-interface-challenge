@@ -2,6 +2,11 @@
   font-family: 'helvetica', 'sans-serif';
   font-weight: lighter; }
 
+.message-bubble-recipient, .message-bubble-sender, .input-container {
+  border-radius: 4em;
+  padding: 0.5em;
+  margin: 0.5em; }
+
 #home {
   margin: 0 10px; }
 
@@ -10,5 +15,27 @@
   box-sizing: border-box;
   padding: 0 10px;
   width: 50%; }
+
+.message-bubble-recipient {
+  background-color: lightgray;
+  text-align: left; }
+
+.message-bubble-sender {
+  background-color: lightseagreen;
+  text-align: right; }
+
+.messages-container {
+  display: flex;
+  flex-direction: column; }
+
+.input-container form {
+  display: flex;
+  justify-content: space-around; }
+.input-container input {
+  padding: 0;
+  flex-grow: 6; }
+.input-container .send-button {
+  color: lightseagreen;
+  flex-grow: 1; }
 
 /*# sourceMappingURL=style.css.map */

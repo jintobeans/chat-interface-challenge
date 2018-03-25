@@ -10,18 +10,23 @@ const GET_MESSAGES = 'GET_MESSAGES'
  */
 const defaultMessages = [
   { id: 1,
-    user: 'laura',
+    user: 1,
     text: 'hey',
   },
   {
     id: 2,
-    user: 'rob',
+    user: 2,
     text: 'whats up'
   },
   {
     id: 3,
-    user: 'laura',
+    user: 1,
     text: 'how was your weekend'
+  },
+  {
+    id: 4,
+    user: 1,
+    text: 'mine was pretty good'
   }
 ]
 

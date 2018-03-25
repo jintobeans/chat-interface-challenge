@@ -3,8 +3,8 @@ import ChatWindow from './ChatWindow'
 export const Home = () => (
 
   <div id='home'>
-    <ChatWindow name="laura"/>
-    <ChatWindow name="rob"/>
+    <ChatWindow user={1}/>
+    <ChatWindow user={2}/>
   </div>
 )
 

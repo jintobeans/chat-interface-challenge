@@ -4,6 +4,7 @@ import history from '../history'
  * ACTION TYPES
  */
 const GET_MESSAGES = 'GET_MESSAGES'
+const SEND_MESSAGE = 'SEND_MESSAGE'
 
 /**
  * INITIAL STATE
@@ -75,6 +76,8 @@ const defaultMessages = [
  */
 const getMessages = messages => ({ type: GET_MESSAGES, messages })
 
+const sendMessage = message => ({ type: SEND_MESSAGE, message })
+
 /**
  * THUNK CREATORS
  */
@@ -84,6 +87,11 @@ export const getMessagesThunk = () => {
     dispatch(getMessages())
 }
 
+export const sendMessageThunk = (message) => {
+  return dispatch =>
+    dispatch(sendMessage(message))
+}
+
 /**
  * REDUCER
  */
@@ -91,6 +99,8 @@ export default function (state = defaultMessages, action) {
   switch (action.type) {
     case GET_MESSAGES:
       return [...action.messages] || state
+    case SEND_MESSAGE:
+      return [...state, action.message]
     default:
       return state
   }

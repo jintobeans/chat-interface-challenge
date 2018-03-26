@@ -9,11 +9,13 @@ export class ChatWindow extends Component {
   }
 
   render(){
-    let { messages, user, name } = this.props
-
+    let { messages, user, name, chattingWith, usersTyping } = this.props
+    let otherUsersTyping = usersTyping.filter((userTyping) => {
+      return userTyping !== user
+    })
     return (
       <div className="chat-window" id={`${name}-window`}>
-        <h3>Chatting with {user}</h3>
+        <h3>Chatting with {chattingWith}</h3>
         <div className="window-container">
           <div className="messages-container">
             {messages && messages.map((message) => {
@@ -21,8 +23,10 @@ export class ChatWindow extends Component {
                 <MessageBubble message={message} user={user}/>
               )
             })}
+            {otherUsersTyping.length > 0 &&
+              <h4>typing</h4>}
           </div>
-          <Input />
+          <Input user={user}/>
         </div>
       </div>
     )
@@ -31,7 +35,8 @@ export class ChatWindow extends Component {
 
 let mapState = (state) => {
   return {
-    messages: state.messages
+    messages: state.messages,
+    usersTyping: state.usersTyping
   }
 }
 

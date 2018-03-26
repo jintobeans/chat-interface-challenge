@@ -1,21 +1,23 @@
 import react, { Component } from 'react'
+import { connect } from 'react-redux'
+import { newUserTyping, userNotTyping} from '../store'
 
-export default class Input extends Component {
+export class Input extends Component {
 
   handleSendMessage = (event) => {
     event.preventDefault()
-    console.log('e', event.target.message.value)
+    console.log('sent this', event.target.message.value)
   }
 
   handleTyping = (event) => {
     event.preventDefault()
     console.log('typing this', event.target.value)
+    if (event.target.value !== "") {
+      this.props.addUser(this.props.user)
+    } else {
+      this.props.removeUser(this.props.user)
+    }
     //will update redux to indicate typing??
-  }
-
-  handleKey = (event) => {
-    event.preventDefault()
-    console.log('keydown', event.target.value)
   }
 
   render(){
@@ -37,3 +39,12 @@ export default class Input extends Component {
     )
   }
 }
+
+let mapDispatch = (dispatch) => {
+  return {
+    addUser: (user) => dispatch(newUserTyping(user)),
+    removeUser: (user) => dispatch(userNotTyping(user))
+  }
+}
+
+export default connect(null, mapDispatch)(Input)

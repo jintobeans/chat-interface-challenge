@@ -17,21 +17,23 @@ export class ChatWindow extends Component {
       <div className="chat-window" id={`${name}-window`}>
         <h3>Chatting with {chattingWith}</h3>
         <div className="window-container">
-          <div className="messages-container">
-            {messages && messages.map((message) => {
-              return (
-                <MessageBubble message={message} user={user}/>
-              )
-            })}
-            {otherUsersTyping.length > 0 &&
-              <div className="typing">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>}
+          <div className="messages-outer">
+            <div className="messages-container">
+              {messages && messages.map((message) => {
+                return (
+                  <MessageBubble message={message} user={user}/>
+                )
+              })}
+              {otherUsersTyping.length > 0 &&
+                <div className="typing">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>}
+            </div>
           </div>
-            <Input user={user}/>
-          </div>
+          <Input user={user}/>
+        </div>
       </div>
     )
   }

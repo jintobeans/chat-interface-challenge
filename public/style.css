@@ -46,9 +46,7 @@
 .typing {
   background-color: white;
   text-align: left;
-  align-self: flex-start; }
-
-.typing {
+  align-self: flex-start;
   will-change: transform;
   width: auto;
   padding: .5em;
@@ -98,8 +96,6 @@
   min-height: auto; }
 
 .messages-container {
-  display: flex;
-  flex-direction: column;
   height: 73vh;
   overflow: auto;
   justify-content: flex-end; }

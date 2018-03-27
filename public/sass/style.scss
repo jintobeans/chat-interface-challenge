@@ -57,14 +57,11 @@ $gray-color: #eceaea;
   align-self: flex-end;
 }
 
-.typing{
+.typing {
   @extend %messagebubble;
   background-color: white;
   text-align: left;
   align-self: flex-start;
-}
-
-.typing {
   will-change: transform;
   width: auto;
   padding: .5em;
@@ -127,8 +124,8 @@ $gray-color: #eceaea;
 }
 
 .messages-container{
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   height: 73vh;
   overflow: auto;
   justify-content: flex-end;

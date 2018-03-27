@@ -8,9 +8,9 @@ export default class MessageBubble extends Component {
     let { message, user } = this.props
     let sentAtDisplayed = message.sentAt.toString().slice(0, message.sentAt.toString().indexOf('G') - 4)
     return (
-      <div className={message.user === user ? "message-sender" :    "message-recipient"}>
+      <div className={message.sentBy === user ? "message-sender" :    "message-recipient"}>
       <div
-        className={message.user === user ? "message-bubble-sender" :    "message-bubble-recipient"}
+        className={message.sentBy === user ? "message-bubble-sender" :    "message-bubble-recipient"}
         id={`message-${message.sentAt}`}>
         {message.text}
         </div>

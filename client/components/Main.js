@@ -1,7 +1,7 @@
 export const Main = ({ children }) => (
 
   <div id='main'>
-    <h1>Chatty UI</h1>
+    <h1>ChattyChat App</h1>
     {children}
   </div>
 )

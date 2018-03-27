@@ -19,13 +19,16 @@ export class ChatWindow extends Component {
   }
 
   render() {
-    let { messages, user, name, chattingWith, usersTyping } = this.props
+    let { messages, user, name, chattingWithID, usersTyping, users } = this.props
     let otherUsersTyping = usersTyping.filter((userTyping) => {
       return userTyping !== user
     })
+    let userChattingWith = users.find((user) => {
+      return user.id === chattingWithID
+    })
     return (
       <div className="chat-window" id={`${name}-window`}>
-        <h3>Chatting with {chattingWith}</h3>
+        <h3>To: {`${userChattingWith.firstName} ${userChattingWith.lastName}`}</h3>
         <div className="window-container">
           <div className="messages-outer">
             <div id={`${name}-messages`} className="messages-container">
@@ -42,7 +45,7 @@ export class ChatWindow extends Component {
                 </div>}
             </div>
           </div>
-          <Input user={user} />
+          <Input user={user} chattingWithID={chattingWithID} />
         </div>
       </div>
     )
@@ -52,7 +55,8 @@ export class ChatWindow extends Component {
 let mapState = (state) => {
   return {
     messages: state.messages,
-    usersTyping: state.usersTyping
+    usersTyping: state.usersTyping,
+    users: state.users
   }
 }
 

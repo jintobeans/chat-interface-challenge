@@ -125,6 +125,7 @@
   .input-container .send-button {
     color: #43cff9;
     flex-grow: 1;
-    align-self: center; }
+    align-self: center;
+    font-size: xx-large; }
 
 /*# sourceMappingURL=style.css.map */

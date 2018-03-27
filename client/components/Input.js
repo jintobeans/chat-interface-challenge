@@ -9,7 +9,8 @@ export class Input extends Component {
     if (event.target.message.value !== ""){
       let newMessage = {
         sentAt: new Date(),
-        user: this.props.user,
+        sentBy: this.props.user,
+        sentTo: this.props.chattingWithID,
         text: event.target.message.value
       }
       this.props.sendMessage(newMessage)

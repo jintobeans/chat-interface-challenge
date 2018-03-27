@@ -10,65 +10,65 @@ const SEND_MESSAGE = 'SEND_MESSAGE'
  * INITIAL STATE
  */
 const defaultMessages = [
-  { id: 1,
+  { sentAt: new Date('March 17, 2018 03:24:55'),
     user: 1,
     text: 'hey',
   },
   {
-    id: 2,
+    sentAt: new Date('March 17, 2018 03:26:01'),
     user: 2,
     text: 'whats up'
   },
   {
-    id: 3,
+    sentAt: new Date('March 17, 2018 03:26:10'),
     user: 1,
     text: 'how was your weekend'
   },
   {
-    id: 4,
+    sentAt: new Date('March 17, 2018 03:26:12'),
     user: 1,
     text: 'mine was pretty good'
   },
-  {
-    id: 5,
-    user: 1,
-    text: 'it was awesome'
-  },
-  {
-    id: 6,
-    user: 1,
-    text: 'i tried a new brunch place'
-  },
-  {
-    id: 7,
-    user: 1,
-    text: 'and went to a concert'
-  },
-  {
-    id: 8,
-    user: 2,
-    text: 'what place did you try?'
-  },
-  {
-    id: 9,
-    user: 1,
-    text: 'mcDonalds have you had it'
-  },
-  {
-    id: 10,
-    user: 2,
-    text: 'what, you went to mcDs for brunch...?'
-  },
-  {
-    id: 11,
-    user: 1,
-    text: 'Oh. no, its actualy an irish pub called mcdonalds'
-  },
-  {
-    id: 12,
-    user: 1,
-    text: 'I see your confusion'
-  }
+  // {
+  //   sentAt: new Date('March 17, 2018 03:26:15'),
+  //   user: 1,
+  //   text: 'it was awesome'
+  // },
+  // {
+  //   sentAt: new Date('March 17, 2018 03:26:20'),
+  //   user: 1,
+  //   text: 'i tried a new brunch place'
+  // },
+  // {
+  //   sentAt: new Date('March 17, 2018 03:26:24'),
+  //   user: 1,
+  //   text: 'and went to a concert'
+  // },
+  // {
+  //   sentAt: new Date('March 17, 2018 03:26:34'),
+  //   user: 2,
+  //   text: 'what place did you try?'
+  // },
+  // {
+  //   sentAt: new Date('March 17, 2018 03:26:39'),
+  //   user: 1,
+  //   text: 'mcDonalds have you had it'
+  // },
+  // {
+  //   sentAt: new Date('March 17, 2018 03:26:44'),
+  //   user: 2,
+  //   text: 'what, you went to mcDs for brunch...?'
+  // },
+  // {
+  //   sentAt: new Date('March 17, 2018 03:26:51'),
+  //   user: 1,
+  //   text: 'Oh. no, its actualy an irish pub called mcdonalds'
+  // },
+  // {
+  //   sentAt: new Date('March 17, 2018 03:27:00'),
+  //   user: 1,
+  //   text: 'I see your confusion'
+  // }
 ]
 
 /**

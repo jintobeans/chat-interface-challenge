@@ -8,7 +8,7 @@ $accent-color:#43cff9;
 %messagebubble{
   border-radius: 4em;
   padding: 0.5em;
-  margin: 0.5em;
+  margin: 0.1em 0;
   width: fit-content
 }
 
@@ -21,7 +21,25 @@ $accent-color:#43cff9;
   box-sizing: border-box;
   padding: 0 10px;
   width: 50%;
-  height: 73vh
+  // height: 73vh
+}
+
+.message-sender{
+  text-align: right;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em 0;
+  min-height: inherit;
+}
+
+.message-recipient{
+  text-align: left;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em 0;
+  min-height: inherit;
 }
 
 .message-bubble-recipient{
@@ -38,15 +56,25 @@ $accent-color:#43cff9;
   align-self: flex-end;
 }
 
+.typing{
+  @extend %messagebubble;
+  background-color: lightgray
+}
+
+.sentAt{
+  font-size: 15%
+}
+
 .window-container {
-  height: inherit
+  height: 73vh;
+  min-height: auto;
 }
 
 .messages-container{
   display: flex;
   flex-direction: column;
   height: inherit;
-  overflow-y: scroll;
+  overflow: auto;
   justify-content: flex-end;
 }
 

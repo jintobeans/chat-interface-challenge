@@ -24,10 +24,10 @@ export class ChatWindow extends Component {
               )
             })}
             {otherUsersTyping.length > 0 &&
-              <h4>typing</h4>}
+              <div className="typing">...</div>}
           </div>
-          <Input user={user}/>
-        </div>
+            <Input user={user}/>
+          </div>
       </div>
     )
   }

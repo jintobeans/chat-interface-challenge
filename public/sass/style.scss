@@ -123,12 +123,20 @@ $gray-color: #eceaea;
   min-height: auto;
 }
 
+.messages-outer{
+  // overflow: auto;
+  height: 73vh;
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+}
+
 .messages-container{
+  // height: 73vh;
+  overflow: auto;
   // display: flex;
   // flex-direction: column;
-  height: 73vh;
-  overflow: auto;
-  justify-content: flex-end;
+  // justify-content: flex-end;
 }
 
 .input-container{

@@ -6,7 +6,7 @@ export default class MessageBubble extends Component {
   }
   render() {
     let { message, user } = this.props
-    let sentAtDisplayed = message.sentAt.toString().slice(0, message.sentAt.toString().indexOf('G') - 1)
+    let sentAtDisplayed = message.sentAt.toString().slice(0, message.sentAt.toString().indexOf('G') - 4)
     return (
       <div className={message.user === user ? "message-sender" :    "message-recipient"}>
       <div

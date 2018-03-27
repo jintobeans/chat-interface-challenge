@@ -1,14 +1,24 @@
 import react, { Component } from 'react'
 import { connect } from 'react-redux'
-import {MessageBubble} from '../components'
+import { MessageBubble } from '../components'
 import Input from './Input'
 
 export class ChatWindow extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
   }
 
-  render(){
+  componentDidMount() {
+    let overflowingBox = document.getElementById(`${this.props.name}-messages`)
+    overflowingBox.scrollTop = overflowingBox.scrollHeight - overflowingBox.clientHeight
+  }
+
+  componentDidUpdate(nextProps) {
+    let overflowingBox = document.getElementById(`${this.props.name}-messages`)
+    overflowingBox.scrollTop = overflowingBox.scrollHeight - overflowingBox.clientHeight
+  }
+
+  render() {
     let { messages, user, name, chattingWith, usersTyping } = this.props
     let otherUsersTyping = usersTyping.filter((userTyping) => {
       return userTyping !== user
@@ -18,10 +28,10 @@ export class ChatWindow extends Component {
         <h3>Chatting with {chattingWith}</h3>
         <div className="window-container">
           <div className="messages-outer">
-            <div className="messages-container">
+            <div id={`${name}-messages`} className="messages-container">
               {messages && messages.map((message) => {
                 return (
-                  <MessageBubble message={message} user={user}/>
+                  <MessageBubble message={message} user={user} />
                 )
               })}
               {otherUsersTyping.length > 0 &&
@@ -32,7 +42,7 @@ export class ChatWindow extends Component {
                 </div>}
             </div>
           </div>
-          <Input user={user}/>
+          <Input user={user} />
         </div>
       </div>
     )

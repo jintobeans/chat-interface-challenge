@@ -95,10 +95,14 @@
 .window-container {
   min-height: auto; }
 
-.messages-container {
+.messages-outer {
   height: 73vh;
-  overflow: auto;
-  justify-content: flex-end; }
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */ }
+
+.messages-container {
+  overflow: auto; }
 
 .input-container {
   margin: 0.5em 0;

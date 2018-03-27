@@ -1,4 +1,5 @@
 import history from '../history'
+import moment from 'moment'
 
 /**
  * ACTION TYPES
@@ -29,46 +30,46 @@ const defaultMessages = [
     user: 1,
     text: 'mine was pretty good'
   },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:26:15'),
-  //   user: 1,
-  //   text: 'it was awesome'
-  // },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:26:20'),
-  //   user: 1,
-  //   text: 'i tried a new brunch place'
-  // },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:26:24'),
-  //   user: 1,
-  //   text: 'and went to a concert'
-  // },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:26:34'),
-  //   user: 2,
-  //   text: 'what place did you try?'
-  // },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:26:39'),
-  //   user: 1,
-  //   text: 'mcDonalds have you had it'
-  // },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:26:44'),
-  //   user: 2,
-  //   text: 'what, you went to mcDs for brunch...?'
-  // },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:26:51'),
-  //   user: 1,
-  //   text: 'Oh. no, its actualy an irish pub called mcdonalds'
-  // },
-  // {
-  //   sentAt: new Date('March 17, 2018 03:27:00'),
-  //   user: 1,
-  //   text: 'I see your confusion'
-  // }
+  {
+    sentAt: new Date('March 17, 2018 03:26:15'),
+    user: 1,
+    text: 'it was awesome'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:26:20'),
+    user: 1,
+    text: 'i tried a new brunch place'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:26:24'),
+    user: 1,
+    text: 'and went to a concert'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:26:34'),
+    user: 2,
+    text: 'what place did you try?'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:26:39'),
+    user: 1,
+    text: 'mcDonalds have you had it'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:26:44'),
+    user: 2,
+    text: 'what, you went to mcDs for brunch...?'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:26:51'),
+    user: 1,
+    text: 'Oh. no, its actualy an irish pub called mcdonalds'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:27:00'),
+    user: 1,
+    text: 'I see your confusion'
+  }
 ]
 
 /**

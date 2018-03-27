@@ -38,6 +38,7 @@ export class Input extends Component {
             id={`input-${this.props.user}`}
             name="message"
             onChange={this.handleTyping}
+            placeholder=" Send A Message"
           />
           <input
             className="send-button"

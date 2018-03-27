@@ -34,7 +34,7 @@
   min-height: inherit; }
 
 .message-bubble-recipient {
-  background-color: lightgray;
+  background-color: #eceaea;
   text-align: left;
   align-self: flex-start; }
 
@@ -44,34 +44,82 @@
   align-self: flex-end; }
 
 .typing {
-  background-color: lightgray; }
+  background-color: white;
+  text-align: left;
+  align-self: flex-start; }
 
+.typing {
+  will-change: transform;
+  width: auto;
+  padding: .5em;
+  display: table;
+  position: relative;
+  animation: 2s bulge infinite ease-out; }
+  .typing::before, .typing::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -2px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white; }
+  .typing::after {
+    height: 10px;
+    width: 10px;
+    left: -10px;
+    bottom: -10px; }
+  .typing span {
+    height: 0.5em;
+    width: 0.5em;
+    float: left;
+    margin: 0 1px;
+    background-color: #9E9EA1;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4; }
+    .typing span:nth-of-type(1) {
+      animation: 1s blink infinite 0.3333s; }
+    .typing span:nth-of-type(2) {
+      animation: 1s blink infinite 0.6666s; }
+    .typing span:nth-of-type(3) {
+      animation: 1s blink infinite 0.9999s; }
+
+@keyframes blink {
+  50% {
+    opacity: 1; } }
+@keyframes bulge {
+  50% {
+    transform: scale(1.05); } }
 .sentAt {
   font-size: 15%; }
 
 .window-container {
-  height: 73vh;
   min-height: auto; }
 
 .messages-container {
   display: flex;
   flex-direction: column;
-  height: inherit;
+  height: 73vh;
   overflow: auto;
   justify-content: flex-end; }
 
 .input-container {
-  border-radius: 4em;
-  margin: 0.5em;
-  padding: 0; }
+  margin: 0.5em 0;
+  padding: 0.5em 0.8em;
+  background-color: #eceaea; }
   .input-container form {
     display: flex;
     justify-content: space-around; }
   .input-container .input-text {
     padding: 1;
-    flex-grow: 25;
+    margin-right: 1.1em;
+    flex-grow: 40;
     border-radius: 4em;
-    height: 2em; }
+    height: 2em;
+    border-color: #d8d8d8 #d1d1d1 #bababa;
+    border-style: solid;
+    border-width: 1px; }
     .input-container .input-text:focus {
       outline: none; }
   .input-container .send-button {

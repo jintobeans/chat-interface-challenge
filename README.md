@@ -2,6 +2,8 @@
 
 A challenge to build a simple UI for chatting with your favorite person
 
+Visit the deployed app: http://chattychat-ui.herokuapp.com/
+
 ## Technologies Used:
 
 * React

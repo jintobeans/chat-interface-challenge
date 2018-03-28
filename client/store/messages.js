@@ -79,8 +79,26 @@ const defaultMessages = [
   {
     sentAt: new Date('March 17, 2018 03:27:00'),
     sentBy: 1,
-    sentTo: 2,
-    text: 'I see your confusion'
+    sentTo: 3,
+    text: 'Where is the HDMI cable?'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:29:00'),
+    sentBy: 3,
+    sentTo: 1,
+    text: 'Check the conference room'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:30:00'),
+    sentBy: 1,
+    sentTo: 3,
+    text: 'Found it'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentBy: 3,
+    sentTo: 1,
+    text: 'Nice'
   }
 ]
 
@@ -96,7 +114,7 @@ const sendMessage = message => ({ type: SEND_MESSAGE, message })
  */
 export const getMessagesThunk = () => {
   return dispatch =>
-  // axios.get('/api/messages')
+  // axios.get('/api/messages') // grab messages for a particular user
     dispatch(getMessages())
 }
 

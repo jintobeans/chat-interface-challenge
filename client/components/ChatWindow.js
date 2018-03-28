@@ -6,9 +6,18 @@ import Input from './Input'
 export class ChatWindow extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      chattingWith: {}
+    }
   }
 
   componentDidMount() {
+    let userChattingWith = this.props.users.find((user) => {
+      return user.id === this.props.chattingWithID
+    })
+    this.setState({
+      chattingWith: userChattingWith
+    })
     let overflowingBox = document.getElementById(`${this.props.name}-messages`)
     overflowingBox.scrollTop = overflowingBox.scrollHeight - overflowingBox.clientHeight
   }
@@ -18,21 +27,55 @@ export class ChatWindow extends Component {
     overflowingBox.scrollTop = overflowingBox.scrollHeight - overflowingBox.clientHeight
   }
 
+  handleUserChange = (event) => {
+    event.preventDefault()
+    let userChattingWith = this.props.users.find((user) => {
+      return user.id == event.target.value
+    })
+    this.setState({
+      chattingWith: userChattingWith
+    })
+  }
+
   render() {
     let { messages, user, name, chattingWithID, usersTyping, users } = this.props
+
+    let currentlyChattingWith = this.state.chattingWith
+
     let otherUsersTyping = usersTyping.filter((userTyping) => {
-      return userTyping !== user
+      return userTyping == currentlyChattingWith.id
     })
-    let userChattingWith = users.find((user) => {
-      return user.id === chattingWithID
+
+    let messagesWithThisUser = messages.filter((message) => {
+      return message.sentTo == currentlyChattingWith.id && message.sentBy == user || message.sentTo == user && message.sentBy == currentlyChattingWith.id
     })
+
     return (
       <div className="chat-window" id={`${name}-window`}>
-        <h3>To: {`${userChattingWith.firstName} ${userChattingWith.lastName}`}</h3>
+        <h3>To:
+          <select
+            className="to-dropdown"
+            id={`${name}-userSelection`}
+            onChange={this.handleUserChange}
+            name="userChattingWith"
+            value={currentlyChattingWith.id}>
+            {
+              users && users.map((user) => {
+                return (
+                  <option
+                    value={user.id}>
+                    {`${user.firstName} ${user.lastName}`}
+                  </option>
+                )
+              })
+            }
+          </select>
+        </h3>
         <div className="window-container">
           <div className="messages-outer">
             <div id={`${name}-messages`} className="messages-container">
-              {messages && messages.map((message) => {
+              {currentlyChattingWith.id == user && <h3>Cannot send message to yourself</h3>}
+              {messagesWithThisUser && messagesWithThisUser.map((message) => {
                 return (
                   <MessageBubble message={message} user={user} />
                 )

@@ -18,6 +18,21 @@ const defaultUsers = [
     id: 2,
     firstName: 'Robert',
     lastName: 'Lee'
+  },
+  {
+    id: 3,
+    firstName: 'Angelica',
+    lastName: 'Smith'
+  },
+  {
+    id: 4,
+    firstName: 'Jess',
+    lastName: 'Kim'
+  },
+  {
+    id: 5,
+    firstName: 'Andrew',
+    lastName: 'Bonaparte'
   }
 ]
 

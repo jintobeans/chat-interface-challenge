@@ -35,46 +35,45 @@ const defaultMessages = [
   },
   {
     sentAt: new Date('March 17, 2018 03:26:15'),
-    sentBy: 1,
-    sentTo: 2,
+    sentBy: 2,
+    sentTo: 1,
     text: 'it was awesome'
   },
   {
     sentAt: new Date('March 17, 2018 03:26:20'),
-    sentBy: 1,
-    sentTo: 2,
+    sentBy: 2,
+    sentTo: 1,
     text: 'i tried a new brunch place'
   },
   {
     sentAt: new Date('March 17, 2018 03:26:24'),
-    sentBy: 1,
-    sentTo: 2,
+    sentBy: 2,
+    sentTo: 1,
     text: 'and went to a concert'
   },
   {
     sentAt: new Date('March 17, 2018 03:26:34'),
-    sentBy: 2,
-    sentTo: 1,
-
+    sentBy: 1,
+    sentTo: 2,
     text: 'what place did you try?'
   },
   {
     sentAt: new Date('March 17, 2018 03:26:39'),
-    sentBy: 1,
-    sentTo: 2,
-    text: 'mcDonalds have you had it'
+    sentBy: 2,
+    sentTo: 1,
+    text: 'tartine, you been?'
   },
   {
     sentAt: new Date('March 17, 2018 03:26:44'),
-    sentBy: 2,
-    sentTo: 1,
-    text: 'what, you went to mcDs for brunch...?'
+    sentBy: 1,
+    sentTo: 2,
+    text: 'yea they have cool croissants'
   },
   {
     sentAt: new Date('March 17, 2018 03:26:51'),
-    sentBy: 1,
-    sentTo: 2,
-    text: 'Oh. no, its actualy an irish pub called mcdonalds'
+    sentBy: 2,
+    sentTo: 1,
+    text: 'and coffee!'
   },
   {
     sentAt: new Date('March 17, 2018 03:27:00'),
@@ -99,6 +98,42 @@ const defaultMessages = [
     sentBy: 3,
     sentTo: 1,
     text: 'Nice'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:27:00'),
+    sentBy: 2,
+    sentTo: 4,
+    text: 'hey'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:29:00'),
+    sentBy: 2,
+    sentTo: 5,
+    text: 'lunch?'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:30:00'),
+    sentBy: 5,
+    sentTo: 2,
+    text: 'yeah how bout tender greens'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentBy: 2,
+    sentTo: 5,
+    text: 'exactly what I was craving'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentBy: 5,
+    sentTo: 1,
+    text: 'miss you'
+  },
+  {
+    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentBy: 1,
+    sentTo: 5,
+    text: 'haha'
   }
 ]
 

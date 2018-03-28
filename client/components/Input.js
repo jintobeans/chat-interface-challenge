@@ -17,15 +17,19 @@ export class Input extends Component {
       let input = document.getElementById(`input-${this.props.user}`)
       input.value = ""
     }
-    this.props.removeUser(this.props.user)
+    this.props.removeUser({id: this.props.user})
   }
 
   handleTyping = (event) => {
     event.preventDefault()
+    let userTypingObj = {
+      id: this.props.user,
+      recipient: this.props.chattingWithID
+    }
     if (event.target.value !== "") {
-      this.props.addUser(this.props.user)
+      this.props.addUser(userTypingObj)
     } else {
-      this.props.removeUser(this.props.user)
+      this.props.removeUser(userTypingObj)
     }
   }
 

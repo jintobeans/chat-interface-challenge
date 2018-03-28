@@ -43,7 +43,7 @@ export class ChatWindow extends Component {
     let currentlyChattingWith = this.state.chattingWith
 
     let otherUsersTyping = usersTyping.filter((userTyping) => {
-      return userTyping == currentlyChattingWith.id
+      return userTyping.id == currentlyChattingWith.id && userTyping.recipient == user
     })
 
     let messagesWithThisUser = messages.filter((message) => {
@@ -88,7 +88,7 @@ export class ChatWindow extends Component {
                 </div>}
             </div>
           </div>
-          <Input user={user} chattingWithID={chattingWithID} />
+          <Input user={user} chattingWithID={currentlyChattingWith.id} />
         </div>
       </div>
     )

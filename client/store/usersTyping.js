@@ -14,22 +14,22 @@ const defaultUsersTyping = []
 /**
  * ACTION CREATORS
  */
-const addUserTyping = user => ({ type: USER_TYPING, user })
-const removeUserTyping = user => ({ type: USER_NOT_TYPING, user })
+const addUserTyping = userTyping => ({ type: USER_TYPING, userTyping })
+const removeUserTyping = userTyping => ({ type: USER_NOT_TYPING, userTyping })
 
 
 /**
  * THUNK CREATORS
  */
 
-export const newUserTyping = (user) => {
+export const newUserTyping = (userTyping) => {
   return dispatch =>
-    dispatch(addUserTyping(user))
+    dispatch(addUserTyping(userTyping))
 }
 
-export const userNotTyping = (user) => {
+export const userNotTyping = (userTyping) => {
   return dispatch =>
-    dispatch(removeUserTyping(user))
+    dispatch(removeUserTyping(userTyping))
 }
 
 /**
@@ -38,10 +38,10 @@ export const userNotTyping = (user) => {
 export default function (state = defaultUsersTyping, action) {
   switch (action.type) {
     case USER_TYPING:
-      return [...state, action.user]
+      return [...state, action.userTyping]
     case USER_NOT_TYPING:
       return state.filter((user) => {
-        return user !== action.user
+        return user.id !== action.userTyping.id
       })
     default:
       return state

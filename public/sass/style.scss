@@ -22,7 +22,6 @@ $gray-color: #eceaea;
   box-sizing: border-box;
   padding: 0 10px;
   width: 50%;
-  // height: 73vh
 }
 
 .message-sender{
@@ -30,7 +29,7 @@ $gray-color: #eceaea;
   align-self: flex-end;
   display: flex;
   flex-direction: column;
-  margin: 1.5em 0;
+  margin: 0.5em 0;
   min-height: inherit;
 }
 
@@ -39,7 +38,7 @@ $gray-color: #eceaea;
   align-self: flex-start;
   display: flex;
   flex-direction: column;
-  margin: 1.5em 0;
+  margin: 0.5em 0;
   min-height: inherit;
 }
 
@@ -119,13 +118,12 @@ $gray-color: #eceaea;
 }
 
 .window-container {
-  // height: 73vh;
   min-height: auto;
 }
 
 .messages-outer{
   // overflow: auto;
-  height: 73vh;
+  height: 67vh;
   display: flex;
   flex-direction: column;
   /* align-content: center; */

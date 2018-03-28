@@ -22,7 +22,7 @@
   align-self: flex-end;
   display: flex;
   flex-direction: column;
-  margin: 1.5em 0;
+  margin: 0.5em 0;
   min-height: inherit; }
 
 .message-recipient {
@@ -30,7 +30,7 @@
   align-self: flex-start;
   display: flex;
   flex-direction: column;
-  margin: 1.5em 0;
+  margin: 0.5em 0;
   min-height: inherit; }
 
 .message-bubble-recipient {
@@ -96,7 +96,7 @@
   min-height: auto; }
 
 .messages-outer {
-  height: 73vh;
+  height: 67vh;
   display: flex;
   flex-direction: column;
   /* align-content: center; */ }

@@ -70,67 +70,67 @@ const defaultMessages = [
     text: 'yea they have cool croissants'
   },
   {
-    sentAt: new Date('March 17, 2018 03:26:51'),
+    sentAt: new Date('March 17, 2018 03:27:51'),
     sentBy: 2,
     sentTo: 1,
     text: 'and coffee!'
   },
   {
-    sentAt: new Date('March 17, 2018 03:27:00'),
+    sentAt: new Date('March 11, 2018 12:27:00'),
     sentBy: 1,
     sentTo: 3,
     text: 'Where is the HDMI cable?'
   },
   {
-    sentAt: new Date('March 17, 2018 03:29:00'),
+    sentAt: new Date('March 11, 2018 12:29:00'),
     sentBy: 3,
     sentTo: 1,
     text: 'Check the conference room'
   },
   {
-    sentAt: new Date('March 17, 2018 03:30:00'),
+    sentAt: new Date('March 11, 2018 12:30:00'),
     sentBy: 1,
     sentTo: 3,
     text: 'Found it'
   },
   {
-    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentAt: new Date('March 11, 2018 12:31:00'),
     sentBy: 3,
     sentTo: 1,
     text: 'Nice'
   },
   {
-    sentAt: new Date('March 17, 2018 03:27:00'),
+    sentAt: new Date('March 20, 2018 04:00:00'),
     sentBy: 2,
     sentTo: 4,
     text: 'hey'
   },
   {
-    sentAt: new Date('March 17, 2018 03:29:00'),
+    sentAt: new Date('March 17, 2018 12:00:00'),
     sentBy: 2,
     sentTo: 5,
     text: 'lunch?'
   },
   {
-    sentAt: new Date('March 17, 2018 03:30:00'),
+    sentAt: new Date('March 17, 2018 12:01:00'),
     sentBy: 5,
     sentTo: 2,
     text: 'yeah how bout tender greens'
   },
   {
-    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentAt: new Date('March 17, 2018 12:01:00'),
     sentBy: 2,
     sentTo: 5,
     text: 'exactly what I was craving'
   },
   {
-    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentAt: new Date('March 13, 2018 01:31:00'),
     sentBy: 5,
     sentTo: 1,
     text: 'miss you'
   },
   {
-    sentAt: new Date('March 17, 2018 03:31:00'),
+    sentAt: new Date('March 13, 2018 01:38:00'),
     sentBy: 1,
     sentTo: 5,
     text: 'haha'

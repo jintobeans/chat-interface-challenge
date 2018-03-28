@@ -17,21 +17,19 @@
   padding: 0 10px;
   width: 50%; }
 
-.message-sender {
-  text-align: right;
-  align-self: flex-end;
+.message-sender, .message-recipient {
   display: flex;
   flex-direction: column;
   margin: 0.5em 0;
   min-height: inherit; }
 
+.message-sender {
+  text-align: right;
+  align-self: flex-end; }
+
 .message-recipient {
   text-align: left;
-  align-self: flex-start;
-  display: flex;
-  flex-direction: column;
-  margin: 0.5em 0;
-  min-height: inherit; }
+  align-self: flex-start; }
 
 .message-bubble-recipient {
   background-color: #eceaea;
@@ -98,8 +96,7 @@
 .messages-outer {
   height: 67vh;
   display: flex;
-  flex-direction: column;
-  /* align-content: center; */ }
+  flex-direction: column; }
 
 .messages-container {
   overflow: auto; }

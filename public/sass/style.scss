@@ -24,22 +24,23 @@ $gray-color: #eceaea;
   width: 50%;
 }
 
-.message-sender{
-  text-align: right;
-  align-self: flex-end;
+%message-holders{
   display: flex;
   flex-direction: column;
   margin: 0.5em 0;
   min-height: inherit;
 }
 
+.message-sender{
+  @extend %message-holders;
+  text-align: right;
+  align-self: flex-end;
+}
+
 .message-recipient{
+  @extend %message-holders;
   text-align: left;
   align-self: flex-start;
-  display: flex;
-  flex-direction: column;
-  margin: 0.5em 0;
-  min-height: inherit;
 }
 
 .message-bubble-recipient{
@@ -122,19 +123,13 @@ $gray-color: #eceaea;
 }
 
 .messages-outer{
-  // overflow: auto;
   height: 67vh;
   display: flex;
   flex-direction: column;
-  /* align-content: center; */
 }
 
 .messages-container{
-  // height: 73vh;
   overflow: auto;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
 }
 
 .input-container{

@@ -38,7 +38,7 @@ export class ChatWindow extends Component {
   }
 
   render() {
-    let { messages, user, name, chattingWithID, usersTyping, users } = this.props
+    let { messages, user, name, usersTyping, users } = this.props
 
     let currentlyChattingWith = this.state.chattingWith
 
@@ -52,6 +52,7 @@ export class ChatWindow extends Component {
 
     return (
       <div className="chat-window" id={`${name}-window`}>
+        <p>Logged in as {name}</p>
         <h3>To:
           <select
             className="to-dropdown"

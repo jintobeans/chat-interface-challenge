@@ -40,6 +40,10 @@ export class ChatWindow extends Component {
   render() {
     let { messages, user, name, usersTyping, users } = this.props
 
+    let userFirstName = users.find((person) => {
+      return person.id == user
+    }).firstName
+
     let currentlyChattingWith = this.state.chattingWith
 
     let otherUsersTyping = usersTyping.filter((userTyping) => {
@@ -48,15 +52,15 @@ export class ChatWindow extends Component {
 
     let messagesWithThisUser = messages.filter((message) => {
       return message.sentTo == currentlyChattingWith.id && message.sentBy == user || message.sentTo == user && message.sentBy == currentlyChattingWith.id
-    })
+    }).sort(function(a,b){return a.sentAt - b.sentAt})
 
     return (
       <div className="chat-window" id={`${name}-window`}>
-        <p>Logged in as {name}</p>
+        <p>Logged in as {userFirstName}</p>
         <h3>To:
           <select
             className="to-dropdown"
-            id={`${name}-userSelection`}
+            id={`${userFirstName}-userSelection`}
             onChange={this.handleUserChange}
             name="userChattingWith"
             value={currentlyChattingWith.id}>

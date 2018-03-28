@@ -4582,6 +4582,10 @@ var ChatWindow = exports.ChatWindow = function (_Component) {
           users = _props.users;
 
 
+      var userFirstName = users.find(function (person) {
+        return person.id == user;
+      }).firstName;
+
       var currentlyChattingWith = this.state.chattingWith;
 
       var otherUsersTyping = usersTyping.filter(function (userTyping) {
@@ -4590,14 +4594,16 @@ var ChatWindow = exports.ChatWindow = function (_Component) {
 
       var messagesWithThisUser = messages.filter(function (message) {
         return message.sentTo == currentlyChattingWith.id && message.sentBy == user || message.sentTo == user && message.sentBy == currentlyChattingWith.id;
+      }).sort(function (a, b) {
+        return a.sentAt - b.sentAt;
       });
 
       return _jsx('div', {
         className: 'chat-window',
         id: name + '-window'
-      }, void 0, _jsx('p', {}, void 0, 'Logged in as ', name), _jsx('h3', {}, void 0, 'To:', _jsx('select', {
+      }, void 0, _jsx('p', {}, void 0, 'Logged in as ', userFirstName), _jsx('h3', {}, void 0, 'To:', _jsx('select', {
         className: 'to-dropdown',
-        id: name + '-userSelection',
+        id: userFirstName + '-userSelection',
         onChange: this.handleUserChange,
         name: 'userChattingWith',
         value: currentlyChattingWith.id
@@ -9207,7 +9213,7 @@ var _ref = _jsx('div', {
   chattingWithID: 2
 }), _jsx(_ChatWindow2.default, {
   user: 2,
-  name: 'Rob',
+  name: 'Robert',
   chattingWithID: 1
 }));
 
@@ -9484,57 +9490,57 @@ var defaultMessages = [{ sentAt: new Date('March 17, 2018 03:24:55'),
   sentTo: 2,
   text: 'yea they have cool croissants'
 }, {
-  sentAt: new Date('March 17, 2018 03:26:51'),
+  sentAt: new Date('March 17, 2018 03:27:51'),
   sentBy: 2,
   sentTo: 1,
   text: 'and coffee!'
 }, {
-  sentAt: new Date('March 17, 2018 03:27:00'),
+  sentAt: new Date('March 11, 2018 12:27:00'),
   sentBy: 1,
   sentTo: 3,
   text: 'Where is the HDMI cable?'
 }, {
-  sentAt: new Date('March 17, 2018 03:29:00'),
+  sentAt: new Date('March 11, 2018 12:29:00'),
   sentBy: 3,
   sentTo: 1,
   text: 'Check the conference room'
 }, {
-  sentAt: new Date('March 17, 2018 03:30:00'),
+  sentAt: new Date('March 11, 2018 12:30:00'),
   sentBy: 1,
   sentTo: 3,
   text: 'Found it'
 }, {
-  sentAt: new Date('March 17, 2018 03:31:00'),
+  sentAt: new Date('March 11, 2018 12:31:00'),
   sentBy: 3,
   sentTo: 1,
   text: 'Nice'
 }, {
-  sentAt: new Date('March 17, 2018 03:27:00'),
+  sentAt: new Date('March 20, 2018 04:00:00'),
   sentBy: 2,
   sentTo: 4,
   text: 'hey'
 }, {
-  sentAt: new Date('March 17, 2018 03:29:00'),
+  sentAt: new Date('March 17, 2018 12:00:00'),
   sentBy: 2,
   sentTo: 5,
   text: 'lunch?'
 }, {
-  sentAt: new Date('March 17, 2018 03:30:00'),
+  sentAt: new Date('March 17, 2018 12:01:00'),
   sentBy: 5,
   sentTo: 2,
   text: 'yeah how bout tender greens'
 }, {
-  sentAt: new Date('March 17, 2018 03:31:00'),
+  sentAt: new Date('March 17, 2018 12:01:00'),
   sentBy: 2,
   sentTo: 5,
   text: 'exactly what I was craving'
 }, {
-  sentAt: new Date('March 17, 2018 03:31:00'),
+  sentAt: new Date('March 13, 2018 01:31:00'),
   sentBy: 5,
   sentTo: 1,
   text: 'miss you'
 }, {
-  sentAt: new Date('March 17, 2018 03:31:00'),
+  sentAt: new Date('March 13, 2018 01:38:00'),
   sentBy: 1,
   sentTo: 5,
   text: 'haha'

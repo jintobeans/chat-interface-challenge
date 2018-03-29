@@ -79,13 +79,17 @@ export class ChatWindow extends Component {
         <div className="window-container">
           <div className="messages-outer">
             <div id={`${name}-messages`} className="messages-container">
-              {currentlyChattingWith.id == user && <h3>Cannot send message to yourself</h3>}
-              {messagesWithThisUser && messagesWithThisUser.map((message) => {
+              {
+                currentlyChattingWith.id == user && <h3>Cannot send message to yourself</h3>
+              }
+              {
+                messagesWithThisUser && messagesWithThisUser.map((message) => {
                 return (
                   <MessageBubble message={message} user={user} />
                 )
               })}
-              {otherUsersTyping.length > 0 &&
+              {
+                otherUsersTyping.length > 0 &&
                 <div className="typing">
                   <span></span>
                   <span></span>
@@ -93,7 +97,9 @@ export class ChatWindow extends Component {
                 </div>}
             </div>
           </div>
-          <Input user={user} chattingWithID={currentlyChattingWith.id} />
+          <Input
+            user={user}
+            chattingWithID={currentlyChattingWith.id} />
         </div>
       </div>
     )

@@ -1,6 +1,8 @@
 import react, { Component } from 'react'
 import { connect } from 'react-redux'
 import { newUserTyping, userNotTyping, sendMessageThunk} from '../store'
+import io from 'socket.io-client';
+
 
 export class Input extends Component {
 
@@ -31,6 +33,8 @@ export class Input extends Component {
     } else {
       this.props.removeUser(userTypingObj)
     }
+    // const socket = io(window.location.origin);
+    // socket.emit('new-message', event.target.value)
   }
 
   render(){

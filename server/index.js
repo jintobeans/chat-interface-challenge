@@ -51,8 +51,8 @@ const createApp = () => {
 const startListening = () => {
   const server = app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
 
-  // const io = socketio(server)
-  // require('./socket')(io)
+  const io = socketio(server)
+  require('./socket')(io)
 }
 
 if (require.main === module) {

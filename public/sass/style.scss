@@ -7,10 +7,14 @@ $accent-color:#43cff9;
 $gray-color: #eceaea;
 
 %messagebubble{
-  border-radius: 4em;
+  border-radius: 5px;
   padding: 0.5em;
   margin: 0.1em 0;
-  width: fit-content
+  width: fit-content;
+  img {
+    height: 20vh;
+    padding: 0.5em 0.7em
+  }
 }
 
 #home{
@@ -163,4 +167,11 @@ $gray-color: #eceaea;
 
 .to-dropdown{
   margin: 0 1em
+}
+
+
+//Image sizing
+.input-container img {
+  // width: 10vw;
+  height: 10vh;
 }

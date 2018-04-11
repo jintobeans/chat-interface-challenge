@@ -6762,41 +6762,47 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _ref2 = _jsx('input', {
+var _ref = _jsx('input', {
   className: 'send-button',
   type: 'submit',
   value: '>'
 });
 
-var Input = exports.Input = function (_Component) {
-  _inherits(Input, _Component);
+var Input = exports.Input = function (_React$Component) {
+  _inherits(Input, _React$Component);
 
-  function Input() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
+  function Input(props) {
     _classCallCheck(this, Input);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).call(this, props));
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Input.__proto__ || Object.getPrototypeOf(Input)).call.apply(_ref, [this].concat(args))), _this), _this.handleSendMessage = function (event) {
+    _this.handleSendMessage = function (event) {
       event.preventDefault();
-      if (event.target.message.value !== "") {
+      if (event.target.message.value !== "" || _this.state.imageToPreview) {
         var newMessage = {
           sentAt: new Date(),
           sentBy: _this.props.user,
           sentTo: _this.props.chattingWithID,
-          text: event.target.message.value
+          text: event.target.message.value,
+          image: _this.state.imageToPreview
         };
         _this.props.sendMessage(newMessage);
-        var input = document.getElementById('input-' + _this.props.user);
-        input.value = "";
+        // const input = document.getElementById(`input-${this.props.user}`)
+        // input.value = ""
+        if (_this.textInput) {
+          _this.textInput.value = "";
+        }
+        if (_this.imageInput) {
+          _this.imageInput.value = null;
+        }
+        _this.setState({
+          imageToPreview: undefined
+        });
       }
       _this.props.removeUser({ id: _this.props.user });
-    }, _this.handleTyping = function (event) {
+    };
+
+    _this.handleTyping = function (event) {
       event.preventDefault();
       var userTypingObj = {
         id: _this.props.user,
@@ -6809,30 +6815,58 @@ var Input = exports.Input = function (_Component) {
       }
       // const socket = io(window.location.origin);
       // socket.emit('new-message', event.target.value)
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    };
+
+    _this.handleFileSelection = function (event) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        _this.setState({
+          imageToPreview: reader.result
+        });
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    };
+
+    _this.state = {
+      imageToPreview: ''
+    };
+    return _this;
   }
 
   _createClass(Input, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _jsx('div', {
         className: 'input-container'
       }, void 0, _jsx('form', {
         id: 'form-' + this.props.user,
         onSubmit: this.handleSendMessage
-      }, void 0, _jsx('input', {
+      }, void 0, this.state.imageToPreview && _jsx('img', {
+        src: this.state.imageToPreview
+      }), _react2.default.createElement('input', {
         className: 'input-text',
         type: 'text',
         id: 'input-' + this.props.user,
         name: 'message',
         onChange: this.handleTyping,
-        placeholder: ' Send A Message'
-      }), _ref2));
+        placeholder: ' Send A Message',
+        ref: function ref(elem) {
+          _this2.textInput = elem;
+        }
+      }), _react2.default.createElement('input', {
+        type: 'file',
+        id: 'input',
+        onChange: this.handleFileSelection,
+        ref: function ref(elem) {
+          _this2.imageInput = elem;
+        } }), _ref));
     }
   }]);
 
   return Input;
-}(_react.Component);
+}(_react2.default.Component);
 
 var mapState = function mapState(state) {
   return {
@@ -13112,7 +13146,9 @@ var MessageBubble = function (_Component) {
       }, void 0, _jsx('div', {
         className: message.sentBy === user ? "message-bubble-sender" : "message-bubble-recipient",
         id: 'message-' + message.sentAt
-      }, void 0, message.text), _jsx('div', {
+      }, void 0, message.text, message.image && _jsx('div', {}, void 0, _jsx('img', {
+        src: message.image
+      }))), _jsx('div', {
         className: 'sentAt'
       }, void 0, sentAtDisplayed));
     }

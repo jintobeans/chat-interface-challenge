@@ -13,6 +13,10 @@ export default class MessageBubble extends Component {
           className={message.sentBy === user ? "message-bubble-sender" : "message-bubble-recipient"}
           id={`message-${message.sentAt}`}>
           {message.text}
+          {message.image &&
+            <div>
+              <img src={message.image} />
+            </div>}
         </div>
         <div className="sentAt">
           {sentAtDisplayed}

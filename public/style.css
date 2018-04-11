@@ -3,10 +3,13 @@
   font-weight: lighter; }
 
 .message-bubble-recipient, .message-bubble-sender, .typing {
-  border-radius: 4em;
+  border-radius: 5px;
   padding: 0.5em;
   margin: 0.1em 0;
   width: fit-content; }
+  .message-bubble-recipient img, .message-bubble-sender img, .typing img {
+    height: 20vh;
+    padding: 0.5em 0.7em; }
 
 #home {
   margin: 0 10px; }
@@ -127,5 +130,8 @@
 
 .to-dropdown {
   margin: 0 1em; }
+
+.input-container img {
+  height: 10vh; }
 
 /*# sourceMappingURL=style.css.map */
